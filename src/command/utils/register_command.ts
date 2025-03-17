@@ -1,8 +1,8 @@
 import { REST, Routes } from 'discord.js';
-import { commands } from './command';
+import { commands } from '../index';
 
-const bot_token = process.env.DISCORD_TOKEN;
-const client_id = process.env.CLIENT_ID;
+const bot_token = process.env.DISCORD_TOKEN!;
+const client_id = process.env.CLIENT_ID!;
 
 export const register_command = () => {
 	const rest = new REST().setToken(bot_token);

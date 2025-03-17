@@ -1,25 +1,41 @@
 import { User } from 'discord.js';
 
 export class EventUserList {
-	private users: User[];
+	participant: User[];
+	reservist: User[];
 
 
 	constructor() {
-		this.users = [];
+		this.participant = [];
+		this.reservist = [];
 	}
 
-	addUser(user: User) {
-		if (this.users.includes(user)) {
+	addParticipant(user: User) {
+		if (this.participant.includes(user)) {
 			return;
 		}
-		this.users.push(user);
+
+		if (this.reservist.includes(user)) {
+			this.deleteUser(user);
+		}
+
+		this.participant.push(user);
+	}
+
+	addReservist(user: User) {
+		if (this.reservist.includes(user)) {
+			return;
+		}
+
+		if (this.participant.includes(user)) {
+			this.deleteUser(user);
+		}
+
+		this.reservist.push(user);
 	}
 
 	deleteUser(user: User) {
-		this.users = this.users.filter(user_item => user_item !== user);
-	}
-
-	getUsers() {
-		return this.users;
+		this.participant = this.participant.filter(user_item => user_item !== user);
+		this.reservist = this.reservist.filter(user_item => user_item !== user);
 	}
 }

@@ -1,7 +1,7 @@
 import 'dotenv/config';
 import { Client, Events, GatewayIntentBits } from 'discord.js';
-import { register_command } from './src/register_command';
-import { set_handler } from './src/set_handler';
+import { register_command } from './command/utils/register_command';
+import { set_handler } from './handlers/set_handler';
 
 const bot_token = process.env.DISCORD_TOKEN;
 
