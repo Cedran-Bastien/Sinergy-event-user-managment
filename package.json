@@ -4,13 +4,15 @@
   "description": "Discord bot to manage event user list",
   "main": "index.ts",
   "scripts": {
+    "dev": "tsx watch index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Cèdran BASTIEN",
   "license": "ISC",
   "dependencies": {
     "discord.js": "^14.18.0",
-    "dotenv": "^16.4.7"
+    "dotenv": "^16.4.7",
+    "tsx": "^4.19.3"
   },
   "devDependencies": {
     "@eslint/js": "^9.22.0",
