@@ -1,7 +1,7 @@
 import 'dotenv/config';
 import { Client, Events, GatewayIntentBits } from 'discord.js';
-import { ping_command } from './src/command/ping';
 import { register_command } from './src/register_command';
+import { set_handler } from './src/set_handler';
 
 const bot_token = process.env.DISCORD_TOKEN;
 
@@ -11,12 +11,7 @@ client.once(Events.ClientReady, readyClient => {
 	console.log(`Ready! Logged in as ${readyClient.user.tag}`);
 });
 
-client.on(Events.InteractionCreate, async (interaction) => {
-	if (!interaction.isChatInputCommand()) return;
-	console.log(interaction.commandName);
-
-	await ping_command.execute(interaction);
-});
+set_handler(client);
 
 register_command();
 
