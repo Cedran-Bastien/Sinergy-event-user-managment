@@ -1,0 +1,21 @@
+{
+  "name": "synergy_discord_bot",
+  "version": "1.0.0",
+  "description": "Discord bot to manage event user list",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Cèdran BASTIEN",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.18.0",
+    "dotenv": "^16.4.7"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.22.0",
+    "eslint": "^9.22.0",
+    "globals": "^16.0.0",
+    "typescript-eslint": "^8.26.1"
+  }
+}
